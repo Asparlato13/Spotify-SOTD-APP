@@ -1,12 +1,11 @@
 //
-//  NewReleasesResponse.swift
+//  NewReleaseResponse.swift
 //  Spotify(Youtube App)
 //
-//  Created by Adrianna Parlato on 8/23/22.
+//  Created by Adrianna Parlato on 8/30/22.
 //
 
 import Foundation
-
 struct NewReleasesResponses: Codable {
     let albums: AlbumsResponse
 }
@@ -26,9 +25,5 @@ struct Album: Codable {
     let artists: [Artist]
     
 }
-struct Artist: Codable {
-    let id: String
-    let name: String
-    let type: String
-    let external_urls: [String: St]
-}
+
+
