@@ -291,7 +291,7 @@ class HomeViewController: UIViewController {
             else {
                 fatalError("Models r nil")
                 
-                return
+                    return
             }
             print("config viewmodel")
             self.configureModels(
