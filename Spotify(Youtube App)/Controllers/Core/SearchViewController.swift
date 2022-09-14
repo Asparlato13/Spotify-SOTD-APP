@@ -106,7 +106,7 @@ extension SearchViewController: SearchResultsViewControllerDelegate {
             guard let url = URL(string: model.external_urls["spotify"] ?? "") else {
                 return
             }
-            //when user clicks on artits this built in safari will allow the to go to spotiy's sarafi page for that unique artist 
+            //when user clicks on artits this built in safari will allow the to go to spotiy's sarafi page for that unique artist
             let vc = SFSafariViewController(url: url)
             present(vc, animated: true)
             //cell.textLabel?.text = model.name
@@ -117,15 +117,15 @@ extension SearchViewController: SearchResultsViewControllerDelegate {
             
             
         case .track(let model):
-            break
-           // cell.textLabel?.text =  model.name
+            //anytime user clicks on any 'song' row on amy page of the app a presenter page will appear 
+            PlaybackPresenter.startPlayback(from: self, track: model)
+          
         case .playlist(let model):
             let vc = PlaylistViewController(playlist: model)
             vc.navigationItem.largeTitleDisplayMode = .never
             navigationController?.pushViewController(vc, animated: true)
             
     }
- 
     }
 }
 

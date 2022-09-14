@@ -55,6 +55,7 @@ class PlaylistViewController: UIViewController{
     
     
     private var viewModels = [RecommendedTrackCellViewModel]()
+    private var tracks = [AudioTrack]()
         
         override func viewDidLoad() {
             super.viewDidLoad()
@@ -77,6 +78,7 @@ class PlaylistViewController: UIViewController{
                     case .success(let model):
                         
                       // RecommendedTrackCellViewModel
+                    self?.tracks = model.tracks.items.compactMap({ $0.track })
                         self?.viewModels = model.tracks.items.compactMap({
                             RecommendedTrackCellViewModel(
                             name: $0.track.name,
@@ -98,7 +100,7 @@ class PlaylistViewController: UIViewController{
                 action: #selector(didTapShare))
             
     }
-    
+    //options for when user clicks ion share icon -- they  can  message it to friend  etc
     @objc private func didTapShare() {
         //print(playlist.external_urls)
         guard let url = URL(string: playlist.external_urls["spotify"] ?? "") else {
@@ -165,6 +167,11 @@ extension PlaylistViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         //play song
+        let index = indexPath.row
+        let track = tracks[index]
+        PlaybackPresenter.startPlayback(from: self, track: track)
+        
+        
     }
     
 }
@@ -172,10 +179,9 @@ extension PlaylistViewController: UICollectionViewDelegate, UICollectionViewData
 
 extension PlaylistViewController: PlaylistHeaderCollectionReusableViewDelegate {
     func PlaylistHeaderCollectionReusableViewDidTapPlayAll(_ header: PlaylistHeaderCollectionReusableView) {
-        //start play list in  queue
-        print("playing all")
+        PlaybackPresenter.startPlayback(from: self, tracks: tracks)
     }
         
-    }
+}
 
 

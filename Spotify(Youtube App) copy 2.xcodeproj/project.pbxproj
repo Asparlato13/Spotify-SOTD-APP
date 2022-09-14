@@ -39,6 +39,8 @@
 		12CC52A028D253C200A519E5 /* SearchResultDefaultTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CC529F28D253C200A519E5 /* SearchResultDefaultTableViewCellViewModel.swift */; };
 		12CC52A228D2588600A519E5 /* SearchResultSubtitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CC52A128D2588600A519E5 /* SearchResultSubtitleTableViewCell.swift */; };
 		12CC52A428D25AB200A519E5 /* SearchResultSubtitleTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CC52A328D25AB200A519E5 /* SearchResultSubtitleTableViewCellViewModel.swift */; };
+		12CC52A728D26AEB00A519E5 /* PlaybackPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CC52A628D26AEB00A519E5 /* PlaybackPresenter.swift */; };
+		12CC52A928D2769100A519E5 /* PlayerControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CC52A828D2769100A519E5 /* PlayerControlsView.swift */; };
 		12DCC95D28ABE4A600CCA19D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DCC95C28ABE4A600CCA19D /* AppDelegate.swift */; };
 		12DCC95F28ABE4A600CCA19D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DCC95E28ABE4A600CCA19D /* SceneDelegate.swift */; };
 		12DCC96128ABE4A600CCA19D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DCC96028ABE4A600CCA19D /* HomeViewController.swift */; };
@@ -98,6 +100,8 @@
 		12CC529F28D253C200A519E5 /* SearchResultDefaultTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultDefaultTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		12CC52A128D2588600A519E5 /* SearchResultSubtitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultSubtitleTableViewCell.swift; sourceTree = "<group>"; };
 		12CC52A328D25AB200A519E5 /* SearchResultSubtitleTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultSubtitleTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		12CC52A628D26AEB00A519E5 /* PlaybackPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackPresenter.swift; sourceTree = "<group>"; };
+		12CC52A828D2769100A519E5 /* PlayerControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerControlsView.swift; sourceTree = "<group>"; };
 		12DCC95928ABE4A600CCA19D /* Spotify(Youtube App).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spotify(Youtube App).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		12DCC95C28ABE4A600CCA19D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12DCC95E28ABE4A600CCA19D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -168,6 +172,14 @@
 			path = SearchResultCells;
 			sourceTree = "<group>";
 		};
+		12CC52A528D26AAD00A519E5 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				12CC52A628D26AEB00A519E5 /* PlaybackPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		12DCC95028ABE4A600CCA19D = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +200,7 @@
 		12DCC95B28ABE4A600CCA19D /* Spotify(Youtube App) */ = {
 			isa = PBXGroup;
 			children = (
+				12CC52A528D26AAD00A519E5 /* Presenter */,
 				12DCC97A28ABE53C00CCA19D /* Resources */,
 				12DCC97928ABE52900CCA19D /* Managers */,
 				12DCC97828ABE51C00CCA19D /* ViewModels */,
@@ -218,6 +231,7 @@
 				1256B6B928C91999006C30DB /* PlaylistHeaderCollectionReusableView.swift */,
 				128C9D8728CA4632000BB154 /* TitleHeaderCollectionReusableView.swift */,
 				128C9D8F28CFA734000BB154 /* GenreCollectionViewCell.swift */,
+				12CC52A828D2769100A519E5 /* PlayerControlsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -401,6 +415,7 @@
 				12DCC96128ABE4A600CCA19D /* HomeViewController.swift in Sources */,
 				128C9D8C28CA5384000BB154 /* AlbumCollectionViewCellViewModel.swift in Sources */,
 				127DCE6228C6B4C500E1F85F /* AlbumViewController.swift in Sources */,
+				12CC52A928D2769100A519E5 /* PlayerControlsView.swift in Sources */,
 				127DCE3F28B5325D00E1F85F /* APIImage.swift in Sources */,
 				128C9D9428CFBE55000BB154 /* CategoryCollectionViewCellViewModel.swift in Sources */,
 				127DCE5C28BE725D00E1F85F /* NewReleasesResponse.swift in Sources */,
@@ -428,6 +443,7 @@
 				127DCE6428C6C06600E1F85F /* AlbumDetailResponse.swift in Sources */,
 				12DCC98A28ABEE7B00CCA19D /* ProfileViewController.swift in Sources */,
 				12DCC98428ABEE4800CCA19D /* AuthViewController.swift in Sources */,
+				12CC52A728D26AEB00A519E5 /* PlaybackPresenter.swift in Sources */,
 				128C9D8A28CA51CF000BB154 /* AlbumTrackCollectionViewCell.swift in Sources */,
 				12DCC98028ABEDD500CCA19D /* LibraryViewController.swift in Sources */,
 				12DCC97C28ABED7D00CCA19D /* TabBarViewController.swift in Sources */,
