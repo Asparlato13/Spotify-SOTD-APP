@@ -4,7 +4,7 @@
 //
 //  Created by Adrianna Parlato on 8/16/22.
 //
-
+import SafariServices
 import UIKit
 
 class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchBarDelegate {
@@ -103,7 +103,12 @@ extension SearchViewController: SearchResultsViewControllerDelegate {
     func didTapResults(_ result: SearchResult) {
         switch result {
         case .artists(let model):
-            break
+            guard let url = URL(string: model.external_urls["spotify"] ?? "") else {
+                return
+            }
+            //when user clicks on artits this built in safari will allow the to go to spotiy's sarafi page for that unique artist 
+            let vc = SFSafariViewController(url: url)
+            present(vc, animated: true)
             //cell.textLabel?.text = model.name
         case .album(let model):
            let vc = AlbumViewController(album: model)
