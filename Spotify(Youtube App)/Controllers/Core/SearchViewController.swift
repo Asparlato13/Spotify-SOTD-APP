@@ -118,7 +118,7 @@ extension SearchViewController: SearchResultsViewControllerDelegate {
             
         case .track(let model):
             //anytime user clicks on any 'song' row on amy page of the app a presenter page will appear 
-            PlaybackPresenter.startPlayback(from: self, track: model)
+            PlaybackPresenter.shared.startPlayback(from: self, track: model)
           
         case .playlist(let model):
             let vc = PlaylistViewController(playlist: model)

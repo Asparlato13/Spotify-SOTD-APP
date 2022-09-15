@@ -154,7 +154,7 @@ class AlbumViewController: UIViewController {
               //play song
               //when user taps on rows
               let track = tracks[indexPath.row]
-              PlaybackPresenter.startPlayback(from: self, track: track)
+              PlaybackPresenter.shared.startPlayback(from: self, track: track)
           }
           
       }
@@ -163,7 +163,7 @@ class AlbumViewController: UIViewController {
 extension AlbumViewController: PlaylistHeaderCollectionReusableViewDelegate {
     func PlaylistHeaderCollectionReusableViewDidTapPlayAll(_ header: PlaylistHeaderCollectionReusableView) {
         //start play list in  queue
-        PlaybackPresenter.startPlayback(from: self, tracks: tracks)
+        PlaybackPresenter.shared.startPlayback(from: self, tracks: tracks)
     }
 
               

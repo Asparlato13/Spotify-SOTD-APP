@@ -6,8 +6,22 @@
 //
 
 import UIKit
+import SDWebImage
+
+protocol PlayerViewControllerDelegate: AnyObject {
+    func didTapPlayPause()
+    func didTapNext()
+    func didTapBack()
+    func didSlideSlider(_ value: Float)
+}
+
 
 class PlayerViewController: UIViewController {
+    
+    
+    weak var dataSource: PlayerDataSource?
+    weak var delegate: PlayerViewControllerDelegate?
+
 
     private let imageView: UIImageView = {
         let imageView = UIImageView()
@@ -27,6 +41,7 @@ class PlayerViewController: UIViewController {
         controlsView.delegate = self
         configureBarButtons()
         
+        configure()
         
     }
     override func viewDidLayoutSubviews() {
@@ -42,6 +57,15 @@ class PlayerViewController: UIViewController {
             width: view.width-20,
             height: view.height-imageView.height-view.safeAreaInsets.top-view.safeAreaInsets.bottom-15)
 
+    }
+    
+    private func configure() {
+        imageView.sd_setImage(with: dataSource?.imageURL, completed: nil)
+       //adds song name and artist 
+        controlsView.configure(
+            with: PlayerControlsViewModel(
+            title: dataSource?.songName,
+            subtitle: dataSource?.subtitle))
     }
     
     //buttons for closing presenting page in  top right corner
@@ -65,16 +89,21 @@ class PlayerViewController: UIViewController {
 
 
 extension PlayerViewController: playerControlsViewDelegate {
+    func playerControlsView(_ playerControlsView: PlayerControlsView, didSlideSlider value: Float) {
+        delegate?.didSlideSlider(value)
+    }
+    
     func playerControlsViewDidTapPlayPauseButton(_ playerControlsView: PlayerControlsView) {
+        delegate?.didTapPlayPause()
         
     }
     
     func playerControlsViewDidTapNextButton(_ playerControlsView: PlayerControlsView) {
-        
+        delegate?.didTapNext()
     }
     
     func playerControlsViewDidTapBackButton(_ playerControlsView: PlayerControlsView) {
-        
+        delegate?.didTapBack()
     }
     
     
