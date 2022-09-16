@@ -153,7 +153,9 @@ class AlbumViewController: UIViewController {
               collectionView.deselectItem(at: indexPath, animated: true)
               //play song
               //when user taps on rows
-              let track = tracks[indexPath.row]
+              var track = tracks[indexPath.row]
+              //when user clicks on trracks within album display the cove photo
+              track.album = self.album
               PlaybackPresenter.shared.startPlayback(from: self, track: track)
           }
           
@@ -162,11 +164,16 @@ class AlbumViewController: UIViewController {
 
 extension AlbumViewController: PlaylistHeaderCollectionReusableViewDelegate {
     func PlaylistHeaderCollectionReusableViewDidTapPlayAll(_ header: PlaylistHeaderCollectionReusableView) {
+     //passs image cover into each of the tracks-- take current track and stick on the current album the album controlle holds onto ( and ablum intternally has  the image urrl set for cover photo)
+        let tracksWithAlbum: [AudioTrack] = tracks.compactMap({
+            var track = $0
+            track.album = self.album
+            return track
+            
+        })
         //start play list in  queue
-        PlaybackPresenter.shared.startPlayback(from: self, tracks: tracks)
+        PlaybackPresenter.shared.startPlayback(from: self, tracks: tracksWithAlbum)
     }
-
-              
 }
 
         

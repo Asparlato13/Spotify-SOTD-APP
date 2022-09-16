@@ -26,7 +26,6 @@ class PlayerViewController: UIViewController {
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.backgroundColor = .systemBlue
         return imageView
     }()
     
@@ -59,6 +58,7 @@ class PlayerViewController: UIViewController {
 
     }
     
+    //takes datasoruce and confir\gures ui components
     private func configure() {
         imageView.sd_setImage(with: dataSource?.imageURL, completed: nil)
        //adds song name and artist 
@@ -84,6 +84,9 @@ class PlayerViewController: UIViewController {
     @objc private func didTapAction() {
             //actions
         }
+    func refreshUI() {
+        configure()
+    }
                                                                
 }
 
@@ -102,7 +105,7 @@ extension PlayerViewController: playerControlsViewDelegate {
         delegate?.didTapNext()
     }
     
-    func playerControlsViewDidTapBackButton(_ playerControlsView: PlayerControlsView) {
+    func playerControlsViewDidTapBackButton(_ playeblrControlsView: PlayerControlsView) {
         delegate?.didTapBack()
     }
     
