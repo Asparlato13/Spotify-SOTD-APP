@@ -143,7 +143,7 @@ extension PlaybackPresenter: PlayerViewControllerDelegate {
             
         }
         
-        
+    
     }
     func didTapBack() {
         if tracks.isEmpty {
