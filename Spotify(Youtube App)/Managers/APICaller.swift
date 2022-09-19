@@ -171,13 +171,54 @@ final class APICaller {
                 
                 
                 //add track to playlist
-                public func addTrackPlaylists(
+                public func addTrackToPlaylist(
                     track: AudioTrack,
                     playlist: Playlist,
                     completion: @escaping (Bool) -> Void
                 ) {
-                    
-                }
+                    //api call to add track
+                    createRequest(with: URL(string: Constants.baseAPIURL + "/playlists/\(playlist.id)/tracks"), type: .POST) { baseRequest in
+                        var request = baseRequest
+                        let json = [
+                            "urls": [
+                                "spotify:track:\(track.id)"
+                            ]
+                        ]
+                        print(json)
+                        request.httpBody = try? JSONSerialization.data(withJSONObject: json, options: .fragmentsAllowed)
+                        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                        print("Adding...")
+                        let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                            guard let data = data, error == nil else {
+                                completion(false)
+                                return
+                                }
+                            do {
+                                //let result = try JSONDecoder().decode(Playlist.self, from: data)
+                                
+                                let result = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+                                    print(result)
+                                if let response = result as? [String: Any], response["snapshot_id"] as? String != nil {
+                                    completion(true)
+                                    
+                                }
+                                else {
+                                    //print(result)
+                                    completion(false)
+                                }
+                                
+                            }
+                            catch {
+                                    print(error)
+                                    completion(false)
+                                }
+                            }
+                            task.resume()
+                            }
+                    }
+                        
+    
+    
                 public func removeTrackFromPlaylists(  track: AudioTrack,
                                                        playlist: Playlist,
                                                        completion: @escaping (Bool) -> Void) {
