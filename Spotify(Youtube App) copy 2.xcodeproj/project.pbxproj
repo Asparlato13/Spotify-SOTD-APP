@@ -71,6 +71,7 @@
 		12DCC9A028ABFFC500CCA19D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DCC99F28ABFFC500CCA19D /* Extensions.swift */; };
 		12DCC9A228AD753900CCA19D /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DCC9A128AD753900CCA19D /* AuthResponse.swift */; };
 		12DCC9A428AE9D1400CCA19D /* SettingsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DCC9A328AE9D1400CCA19D /* SettingsModels.swift */; };
+		12ECB0A628DA163400BBCCFD /* LibraryAlbumResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ECB0A528DA163400BBCCFD /* LibraryAlbumResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -139,6 +140,7 @@
 		12DCC99F28ABFFC500CCA19D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		12DCC9A128AD753900CCA19D /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		12DCC9A328AE9D1400CCA19D /* SettingsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModels.swift; sourceTree = "<group>"; };
+		12ECB0A528DA163400BBCCFD /* LibraryAlbumResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryAlbumResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +279,7 @@
 				12CC529828D1035F00A519E5 /* SearchResultsResponse.swift */,
 				12CC529A28D107C100A519E5 /* SearchResult.swift */,
 				12CC52B328D63E1400A519E5 /* LibraryPlaylistResponse.swift */,
+				12ECB0A528DA163400BBCCFD /* LibraryAlbumResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12CC529E28D250CC00A519E5 /* SearchResultDefaultTableViewCell.swift in Sources */,
+				12ECB0A628DA163400BBCCFD /* LibraryAlbumResponse.swift in Sources */,
 				127DCE4F28BD458C00E1F85F /* NewReleasesCellViewModel.swift in Sources */,
 				12DCC98628ABEE5E00CCA19D /* WelcomeViewController.swift in Sources */,
 				1256B6BC28C91E36006C30DB /* PlaylistHeaderViewViewModel.swift in Sources */,

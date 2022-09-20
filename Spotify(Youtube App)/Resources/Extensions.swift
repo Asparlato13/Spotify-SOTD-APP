@@ -54,8 +54,10 @@ extension String {
     }
 }
 
-
-
+//when user adds/saved album to library it will automatically update the saved album so the user wotn haveto  reload the  app in order to see it
+extension Notification.Name {
+    static let albumSavedNotificaion = Notification.Name("albumSavedNotificaion")
+}
 
 
 

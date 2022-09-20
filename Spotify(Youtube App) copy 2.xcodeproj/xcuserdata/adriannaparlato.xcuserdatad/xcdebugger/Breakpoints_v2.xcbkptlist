@@ -78,8 +78,8 @@
             filePath = "Spotify(Youtube App)/Managers/APICaller.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
+            startingLineNumber = "240"
+            endingLineNumber = "240"
             landmarkName = "addTrackToPlaylist(track:playlist:completion:)"
             landmarkType = "7">
             <Locations>
@@ -126,8 +126,8 @@
             filePath = "Spotify(Youtube App)/Managers/APICaller.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198"
+            startingLineNumber = "247"
+            endingLineNumber = "247"
             landmarkName = "addTrackToPlaylist(track:playlist:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -142,8 +142,8 @@
             filePath = "Spotify(Youtube App)/Managers/APICaller.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "201"
-            endingLineNumber = "201"
+            startingLineNumber = "250"
+            endingLineNumber = "250"
             landmarkName = "addTrackToPlaylist(track:playlist:completion:)"
             landmarkType = "7">
             <Locations>
@@ -190,8 +190,8 @@
             filePath = "Spotify(Youtube App)/Managers/APICaller.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "200"
-            endingLineNumber = "200"
+            startingLineNumber = "249"
+            endingLineNumber = "249"
             landmarkName = "addTrackToPlaylist(track:playlist:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -353,6 +353,22 @@
             startingLineNumber = "108"
             endingLineNumber = "108"
             landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "90868F4F-CBBA-4171-9175-006CC084E15B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Spotify(Youtube App)/Controllers/Other/Library/LibraryAlbumViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "setUpNoAlbumsView()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

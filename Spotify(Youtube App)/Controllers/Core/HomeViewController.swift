@@ -341,6 +341,7 @@ class HomeViewController: UIViewController {
             else {
                 fatalError("Models r nil")
                 
+                
                     
             }
             print("config viewmodel")
