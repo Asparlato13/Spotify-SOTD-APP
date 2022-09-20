@@ -156,6 +156,7 @@ extension LibraryPlaylistViewController:  UITableViewDelegate {
     //when user clicks playlist display data within that playlist
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        //playlsit that user selects
         let playlist = playlists[indexPath.row]
         guard selectionHandler == nil else {
             //if it is not nill pass playlist into cell

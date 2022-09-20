@@ -14,8 +14,8 @@
             filePath = "Spotify(Youtube App)/Controllers/Core/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "didLongPress(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,13 +30,13 @@
             filePath = "Spotify(Youtube App)/Controllers/Core/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "didLongPress(_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "C4247C31-BDF7-41C2-9814-49D6C959DDCB - 1b6c0709b3f34d59"
+                  uuid = "C4247C31-BDF7-41C2-9814-49D6C959DDCB - 1b6c0709b3f34df4"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -46,12 +46,12 @@
                   urlString = "file:///Users/adriannaparlato/Desktop/Research/IOS/Spotify(Youtube%20App)/Spotify(Youtube%20App)/Controllers/Core/HomeViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "105"
-                  endingLineNumber = "105"
+                  startingLineNumber = "110"
+                  endingLineNumber = "110"
                   offsetFromSymbolStart = "50">
                </Location>
                <Location
-                  uuid = "C4247C31-BDF7-41C2-9814-49D6C959DDCB - ca728aa3beb10a59"
+                  uuid = "C4247C31-BDF7-41C2-9814-49D6C959DDCB - ca728aa3beb10ab2"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -61,8 +61,8 @@
                   urlString = "file:///Users/adriannaparlato/Desktop/Research/IOS/Spotify(Youtube%20App)/Spotify(Youtube%20App)/Controllers/Core/HomeViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "106"
-                  endingLineNumber = "106"
+                  startingLineNumber = "111"
+                  endingLineNumber = "111"
                   offsetFromSymbolStart = "38">
                </Location>
             </Locations>
@@ -213,7 +213,7 @@
             <Locations>
                <Location
                   uuid = "A0299EBA-D06A-4B0F-A45B-3868A0799BA0 - c0db224a92a1a26e"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Spotify_Youtube_App_.HomeViewController.didLongPress(__C.UILongPressGestureRecognizer) -&gt; ()"
@@ -247,15 +247,31 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7E2C5CB3-E7A6-4EFF-8114-12BA1F264199"
+            uuid = "85CB7264-9426-4D57-9213-D7914E8945D0"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Spotify(Youtube App)/Controllers/Core/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "didLongPress(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2278E6D1-CED1-408C-9B11-199BEF4456E7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Spotify(Youtube App)/Controllers/Core/HomeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "didLongPress(_:)"
             landmarkType = "7">
          </BreakpointContent>

@@ -90,14 +90,17 @@ class HomeViewController: UIViewController {
             return
         }
         let touchPoint = gesture.location(in: collectionView)
-       // print("point \(touchPoint)")
+      //  print("point: \(touchPoint)")
         //note for reference == on home page section 0 = albums 1= featured playlists 2= for you
         guard let indexPath = collectionView.indexPathForItem(at: touchPoint), indexPath.section == 2 else {
             return
         }
         let model = tracks[indexPath.row]
-        let actionSheet = UIAlertController(title: model.name, message: "Would you like to add this to a playlist?", preferredStyle: .actionSheet)
+        let actionSheet = UIAlertController(title: model.name,
+                                            message: "Would you like to add this to a playlist?",
+                                            preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+       
         actionSheet.addAction(UIAlertAction(title: "Add to Playlist", style: .default, handler: { [weak self] _ in
          
             //ask user which playlist they want to add track to
@@ -113,7 +116,7 @@ class HomeViewController: UIViewController {
                 self?.present(UINavigationController(rootViewController: vc), animated: true, completion: nil)
                 
             }
-           
+        print(actionSheet)
         }))
         present(actionSheet, animated: true)
     }
