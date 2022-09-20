@@ -7,10 +7,14 @@
 
 import UIKit
 
+//responsible for showing playlsit
 class PlaylistViewController: UIViewController{
 
     private let playlist: Playlist
         
+    //to ensure users cannot delete tracks from playloist which thye do not own
+    public var isOwner = false
+    
     private let collectionView = UICollectionView(
         frame: .zero,
         collectionViewLayout: UICollectionViewCompositionalLayout(sectionProvider: { _, _ -> NSCollectionLayoutSection? in
@@ -99,7 +103,50 @@ class PlaylistViewController: UIViewController{
                 target: self,
                 action: #selector(didTapShare))
             
+//            func deleteLongTapGesture() {
+                //when user holds down track in playlist athye can delete it
+            let gesture = UILongPressGestureRecognizer(target: self, action: #selector(didLongPress(_:)))
+            collectionView.addGestureRecognizer(gesture)
+            
     }
+    
+    @objc func didLongPress(_ gesture: UILongPressGestureRecognizer) {
+        guard gesture.state == .began else {
+            return
+        }
+        let touchPoint = gesture.location(in: collectionView)
+        guard let indexPath = collectionView.indexPathForItem(at: touchPoint) else {
+            return
+        }
+        let trackToDelete = tracks[indexPath.row]
+        let actionSheet = UIAlertController(title: trackToDelete.name, message: "Would you like to delete this from the playlist?", preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: "Remove", style: .destructive, handler: { [weak self] _ in
+            guard let strongSelf = self else {
+                return
+            }
+            
+    
+            APICaller.shared.removeTrackFromPlaylists(track: trackToDelete, playlist: strongSelf.playlist) { success in
+                DispatchQueue.main.async {
+                    if success {
+                        print("removed")
+                        strongSelf.tracks.remove(at: indexPath.row)
+                        strongSelf.viewModels.remove(at: indexPath.row)
+                        strongSelf.collectionView.reloadData()
+                    }
+                    else {
+                        print("failed to remove")
+                    }
+                }
+               
+            }
+            
+        }))
+        present(actionSheet, animated: true, completion: nil)
+    }
+    
+    
     //options for when user clicks ion share icon -- they  can  message it to friend  etc
     @objc private func didTapShare() {
         //print(playlist.external_urls)
@@ -162,6 +209,16 @@ extension PlaylistViewController: UICollectionViewDelegate, UICollectionViewData
         return header
     }
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     //tap on item and play song
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -175,7 +232,6 @@ extension PlaylistViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
 }
-
 
 extension PlaylistViewController: PlaylistHeaderCollectionReusableViewDelegate {
     func PlaylistHeaderCollectionReusableViewDidTapPlayAll(_ header: PlaylistHeaderCollectionReusableView) {

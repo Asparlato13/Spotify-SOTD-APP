@@ -168,6 +168,8 @@ extension LibraryPlaylistViewController:  UITableViewDelegate {
         
         let vc = PlaylistViewController(playlist: playlist)
         vc.navigationItem.largeTitleDisplayMode = .never
+        //set is owner to true so that the user can delete their own tracks from their playlist
+        vc.isOwner = true
         navigationController?.pushViewController(vc, animated: true)
         
     }

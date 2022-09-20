@@ -66,6 +66,7 @@ class HomeViewController: UIViewController {
         view.addSubview(spinner)
         fetchData()
         addLongTapGesture()
+       
 }
     
 
